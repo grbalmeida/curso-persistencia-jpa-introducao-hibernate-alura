@@ -14,6 +14,10 @@
 		
 			<!-- Dialect = particularidades de cada banco de dados -->
 			<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
+			<property name="hibernate.show_sql" value="true" />
+			
+			<!-- Geração de tabela automática pelo Hibernate -->
+			<property name="hibernate.hbm2ddl.auto" value="update" />
 		</properties>
 	</persistence-unit>
 </persistence>
