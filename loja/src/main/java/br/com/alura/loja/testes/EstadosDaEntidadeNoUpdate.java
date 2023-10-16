@@ -27,6 +27,8 @@ public class EstadosDaEntidadeNoUpdate {
 		celulares = em.merge(celulares);
 		celulares.setNome("CELULARES");
 		em.flush();
+		
+		em.close();
 	}
 	
 }
