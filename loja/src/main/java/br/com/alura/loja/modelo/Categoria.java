@@ -15,6 +15,10 @@ public class Categoria {
 	private Long id;
 
 	private String Nome;
+	
+	public Categoria() {
+		
+	}
 
 	public Categoria(String nome) {
 		super();
