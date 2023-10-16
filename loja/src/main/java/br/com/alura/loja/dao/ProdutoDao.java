@@ -9,7 +9,6 @@ public class ProdutoDao {
 	private EntityManager em;
 
 	public ProdutoDao(EntityManager em) {
-		super();
 		this.em = em;
 	}
 	
