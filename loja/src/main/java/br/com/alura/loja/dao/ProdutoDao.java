@@ -36,5 +36,26 @@ public class ProdutoDao {
 		return em.createQuery(jpql, Produto.class)
 				.getResultList();
 	}
+	
+	public List<Produto> buscarPorNome(String nome) {
+		String jpql = "SELECT p FROM Produto p WHERE p.nome LIKE CONCAT('%', :nome, '%')";
+		return em.createQuery(jpql, Produto.class)
+				.setParameter("nome", nome)
+				.getResultList();
+	}
+	
+	public List<Produto> buscarPorDescricao(String descricao) {
+		String jpql = "SELECT p FROM Produto p WHERE LOWER(p.descricao) LIKE CONCAT('%', LOWER(:descricao), '%')";
+		return em.createQuery(jpql, Produto.class)
+				.setParameter("descricao", descricao)
+				.getResultList();
+	}
+	
+	public List<Produto> buscarPorNomeDaCategoria(String nomeCategoria) {
+		String jpql = "SELECT p FROM Produto p WHERE LOWER(p.categoria.nome) LIKE CONCAT('%', LOWER(:nomeCategoria), '%')";
+		return em.createQuery(jpql, Produto.class)
+				.setParameter("nomeCategoria", nomeCategoria)
+				.getResultList();
+	}
 
 }
